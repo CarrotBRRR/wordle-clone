@@ -33,8 +33,15 @@ const selectWord = async () => {
 
 const getWords = async () => {
     try {
-        const res = await fetch('words.json').then((res) => res.json());
-        return res["words"];
+        const response = await fetch('words.json');
+        if (!response.ok) {
+            throw new Error('Failed to fetch words file');
+        }
+
+        const responseData = await response.text();
+        console.log(responseData);
+        const wordsData = JSON.parse(responseData);
+        return wordsData;
 
     } catch (error) {
         console.error('Error reading words file:', error);
