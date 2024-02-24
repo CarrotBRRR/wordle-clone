@@ -24,9 +24,9 @@ const showInfo = async() =>{
 }
 
 const selectWord = async () => {
-    let {dictionary} = await getWords();
+    let {words} = await getWords();
     document.getElementById("reButt").innerHTML = "<strong>Please Wait...</strong>"
-    let word = dictionary[Math.floor(Math.random() * dictionary.length)]
+    let word = words[Math.floor(Math.random() * words.length)]
     document.getElementById("reButt").innerHTML = "<strong>Start Over</strong>"
     return word
 }
