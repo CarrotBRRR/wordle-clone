@@ -203,8 +203,8 @@ const getHint = async () => {
 }
 
 const reset = async () => {
-    let {dictionary} = await getWords();
-    currentWord = dictionary[Math.floor(Math.random() * dictionary.length)];
+    let {words} = await getWords();
+    currentWord = words[Math.floor(Math.random() * words.length)];
     guessesRemaining = 4;
     currLetter = 0;
 
