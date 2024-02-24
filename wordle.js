@@ -39,7 +39,6 @@ const getWords = async () => {
         }
 
         const responseData = await response.text();
-        console.log(responseData);
         const wordsData = JSON.parse(responseData);
         return wordsData;
 
