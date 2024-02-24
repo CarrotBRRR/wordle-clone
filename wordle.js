@@ -36,8 +36,8 @@ const getWords = async () => {
     try {
         const data = await fs.readFile('words.json', 'utf8');
         const wordsData = JSON.parse(data);
-        return wordsData;
-        
+        return wordsData["words"];
+
     } catch (error) {
         console.error('Error reading words file:', error);
         return null;
