@@ -31,11 +31,10 @@ const selectWord = async () => {
     return word
 }
 
-const fs = require('fs').promises;
 const getWords = async () => {
     try {
-        const data = await fs.readFile('words.json', 'utf8');
-        const wordsData = JSON.parse(data);
+        const res = await fetch('words.json');
+        const wordsData = JSON.parse(res);
         return wordsData["words"];
 
     } catch (error) {
