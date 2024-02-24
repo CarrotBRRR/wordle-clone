@@ -1,4 +1,3 @@
-
 const darkmode = async() =>{
     var e = document.body;
     e.classList.toggle("dark");
@@ -32,6 +31,7 @@ const selectWord = async () => {
     return word
 }
 
+const fs = require('fs').promises;
 const getWords = async () => {
     try {
         const data = await fs.readFile('words.json', 'utf8');
